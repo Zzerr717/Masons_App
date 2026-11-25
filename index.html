@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mason's Daily Checklist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🌟 Mason's Day 🌟</h1>
+  <p id="date"></p>
+  <div id="todayStars" style="text-align:center; font-size:1.8em; margin:10px 0;"></div>
+
+  <div class="card">
+    <h2>Calendar Game</h2>
+    <p id="calQuestion">What day is today?</p>
+    <div id="calChoices"></div>
+    <p id="calResult"></p>
+  </div>
+
+  <div class="card">
+    <h2>Clock Game</h2>
+    <div class="clock-container">
+      <div class="clock" id="clock"></div>
+      <p id="digitalTime" style="text-align:center; font-size:1.4em; margin-top:10px;"></p>
+    </div>
+    <p id="clockQuestion">What time is it?</p>
+    <div id="clockChoices"></div>
+    <p id="clockResult"></p>
+  </div>
+
+  <div class="card">
+    <h2>Matching Game</h2>
+    <p>Match 3 pairs to win the checklist!</p>
+    <div id="matchBoard"></div>
+    <p id="matchStatus"></p>
+    <button onclick="startMatchingGame()">New Game</button>
+  </div>
+
+  <div class="card">
+    <h2>Today's Checklist</h2>
+    <label><input type="checkbox" id="teeth"> Brushed my teeth</label>
+    <label><input type="checkbox" id="bath"> Had a bath</label>
+    <label><input type="checkbox" id="love"> Told Mom & Dad "I love you"</label>
+    <label><input type="checkbox" id="story"> Shared my favorite part of the day</label>
+  </div>
+
+  <div class="card">
+    <h2>Math Quiz (10 questions)</h2>
+    <div id="quiz"></div>
+    <button onclick="nextQuestion()">Next</button>
+    <p id="quizStatus"></p>
+    <p id="quizResult"></p>
+  </div>
+
+  <div class="card">
+    <h2>Outdoor Time</h2>
+    <label>Minutes outside: <input type="number" id="outsideMin" min="0" style="width:80px"></label>
+    <br><br>
+    <label>What did you do? <input type="text" id="outsideActivity" placeholder="played, walked, etc."></label>
+  </div>
+
+  <div class="card">
+    <h2>Favorite Part of the Day</h2>
+    <textarea id="favoritePart" placeholder="What was your favorite part of the day?"></textarea>
+    <button onclick="speakDay()">🔊 Hear My Favorite Part</button>
+  </div>
+
+  <div class="card" id="aspirationCard" style="display:none;">
+    <h2>Weekly Aspiration</h2>
+    <p>This week I want to get better at:</p>
+    <textarea id="aspiration" placeholder="Something I want to practice or improve this week..."></textarea>
+  </div>
+
+  <div class="card">
+    <h2>Book of the Month</h2>
+    <div id="bookSection">
+      <p>No book set yet.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Smile Photo</h2>
+    <video id="video" autoplay playsinline style="width:100%; max-width:300px; border-radius:12px;"></video>
+    <br>
+    <button onclick="takePhoto()">Take Smile Photo</button>
+    <canvas id="canvas" style="display:none;"></canvas>
+    <img id="photo" style="width:100%; max-width:300px; border-radius:12px; margin-top:10px;">
+  </div>
+
+  <div class="card">
+    <h2>Today & This Week</h2>
+    <div id="weekCalendar"></div>
+  </div>
+
+  <div class="card">
+    <h2>Done for Today?</h2>
+    <button onclick="saveDay()" style="background:#4caf50; font-size:1.2em;">Save My Day 🎉</button>
+    <p id="savedMsg"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
